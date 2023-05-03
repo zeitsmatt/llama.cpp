@@ -13,9 +13,11 @@ Inference of [LLaMA](https://arxiv.org/abs/2302.13971) model in pure C/C++
 - [New quantization methods](https://github.com/ggerganov/llama.cpp#quantization)
 
 ## Description
+
 ## personal note:
 Wrote this in a hurry.  It needs to have the hard coded paths removed for the models and object files from llama.cpp but it works.  It has a few flaws in terms of implementation, like all code in the mainwindow.cpp file and returning control to the main event loop instead of spawning off the prediction loop in a thread, but it is something that can be worked on.  It runs relatively snappy on a 13B LLaMA quantized to 4 bits on a 12700k with 64 gb of ram.  I imagine it would run much faster on an m1 or m2.
-
+Build llama.cpp and copy over model as normal, then open .pro file in QT Designer an build there and run.
+## end personal note.
 The main goal of `llama.cpp` is to run the LLaMA model using 4-bit integer quantization on a MacBook
 
 - Plain C/C++ implementation without dependencies
